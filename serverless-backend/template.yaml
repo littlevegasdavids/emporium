@@ -1,0 +1,48 @@
+Resources:
+  CreateItem:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: item/create.handler
+      Runtime: nodejs20.x
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /item
+            Method: post
+
+  ReadItem:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: item/read.handler
+      Runtime: nodejs20.x
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /item
+            Method: get
+
+  UpdateItem:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: item/update.handler
+      Runtime: nodejs20.x
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /item
+            Method: put
+
+  DeleteItem:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: item/read.handler
+      Runtime: nodejs20.x
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /item
+            Method: delete
